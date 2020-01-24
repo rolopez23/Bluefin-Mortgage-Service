@@ -1,4 +1,4 @@
-/* eslint disable */
+git /* eslint disable */
 module.exports = {
   entry: __dirname + '/client/src/index.jsx',
   module: {

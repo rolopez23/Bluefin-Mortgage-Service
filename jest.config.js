@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
@@ -185,4 +186,13 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+
+  moduleFileExtensions: ["js", "jsx"],
+  moduleDirectories: ["node_modules"],
+
+  testRegex: "((\\.|/*.)(test))\\.js?$",
+
+  setupFilesAfterEnv: [
+    "<rootDir>/jest.setup.js",
+  ],
 };
