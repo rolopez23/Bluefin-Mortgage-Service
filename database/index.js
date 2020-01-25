@@ -38,4 +38,4 @@ const MortgageAd = mongoose.model('Mortgage Ad', mortgageAdSchema);
 module.exports = {
   Listing,
   MortgageAd,
-}
+};

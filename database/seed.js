@@ -14,7 +14,7 @@ const randomSeller = () => {
     ['Sebonic Financial', 23606],
     ['Homeplus Corporation', 34567],
     ['New American Funding', 6606],
-    ['BNC National Bank', 418467]]
+    ['BNC National Bank', 418467]];
 
   const index = Math.floor(Math.random() * 6);
   return banks[index];
