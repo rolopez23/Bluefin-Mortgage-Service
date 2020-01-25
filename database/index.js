@@ -1,10 +1,19 @@
 const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-//The Schema sets maxim
+
+mongoose.connect('mongodb://localhost:27017/mortgages', { useNewUrlParser: true });
+
+const db = mongoose.connection;
+// eslint-disable-next-line no-console
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  // we're connected!
+});
+
 const mortgageAdSchema = new Schema({
-  type: {type: String, enum: ['5/1 Arm', '30 Year Fixed', '15 Year Fixed']},
+  type: { type: String, enum: ['5/1 Arm', '30 Year Fixed', '15 Year Fixed'] },
   seller: String,
   NMLS: Number,
   APR: Number,
@@ -18,13 +27,13 @@ const mortgageAdSchema = new Schema({
 const listingSchema = new Schema({
   price: Number,
   region: String,
-  HOA: {type: Number, default: 0},
+  HOA: { type: Number, default: 0 },
   zip: String,
 });
 
-let Listing = mongoose.model('Listing', listingSchema);
+const Listing = mongoose.model('Listing', listingSchema);
 
-let MortgageAd = mongoose.model('Mortgage Ad', mortgageAdSchema);
+const MortgageAd = mongoose.model('Mortgage Ad', mortgageAdSchema);
 
 module.exports = {
   Listing,
