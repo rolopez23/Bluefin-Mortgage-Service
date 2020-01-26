@@ -34,8 +34,18 @@ const listingSchema = new Schema({
 const Listing = mongoose.model('Listing', listingSchema);
 
 const MortgageAd = mongoose.model('Mortgage Ad', mortgageAdSchema);
+// Returns one listing based on an Id
+const getListing = (listing) => {
+
+};
+
+const getRelevantAdds = (region) => {
+
+};
 
 module.exports = {
   Listing,
   MortgageAd,
+  getListing,
+  getRelevantAdds
 };
