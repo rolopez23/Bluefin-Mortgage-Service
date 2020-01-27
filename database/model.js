@@ -1,16 +1,7 @@
+
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-
-
-mongoose.connect('mongodb://localhost:27017/mortgages', { useNewUrlParser: true });
-
-const db = mongoose.connection;
-// eslint-disable-next-line no-console
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  // we're connected!
-});
 
 const mortgageAdSchema = new Schema({
   type: { type: String, enum: ['5/1 Arm', '30 Year Fixed', '15 Year Fixed'] },
@@ -33,19 +24,17 @@ const listingSchema = new Schema({
 
 const Listing = mongoose.model('Listing', listingSchema);
 
-const MortgageAd = mongoose.model('Mortgage Ad', mortgageAdSchema);
+const MortgageAd = mongoose.model('MortgageAd', mortgageAdSchema);
 // Returns one listing based on an Id
-const getListing = (listing) => {
+const getListing = (listing) => Listing.findById(listing);
 
-};
 
-const getRelevantAdds = (region) => {
+const getRelevantAdds = (region) => MortgageAd.find({ 'region': region });
 
-};
 
 module.exports = {
   Listing,
   MortgageAd,
   getListing,
-  getRelevantAdds
+  getRelevantAdds,
 };
