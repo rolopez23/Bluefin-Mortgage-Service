@@ -17,7 +17,7 @@ const seedDatabase = (entries) => {
       ['New American Funding', 6606],
       ['BNC National Bank', 418467]];
 
-    const index = Math.floor(Math.random() * 6);
+    const index = Math.floor(Math.random() * banks.length);
     return banks[index];
   };
 
@@ -36,7 +36,7 @@ const seedDatabase = (entries) => {
 
   const randomRegion = () => {
     const regions = ['HoustonMetro', 'BayMetro', 'NewYorkMetro', 'SeattleMetro', 'OmahaMetro'];
-    const index = Math.floor(Math.random() * 5);
+    const index = Math.floor(Math.random() * regions.length);
     return regions[index];
   };
 
@@ -88,16 +88,15 @@ const seedDatabase = (entries) => {
 // console.log("Listing:", listing);
 // console.log("MortgageAd:", MortgageAd);
 const generateNewDB = (entries) => {
-  connection.open(() => {
-    // clear database error will occur on no database so write in either case
-    Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()])
-      .then(() => seedDatabase(entries))
-      .catch(() => seedDatabase(entries))
-      .catch(() => {
-        // eslint-disable-next-line no-console
-        console.log('Error seeding databse');
-      });
-  });
+  return connection.openAsync()
+    .then(() => Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()]))
+    .then(() => seedDatabase(entries))
+    .catch(() => seedDatabase(entries))
+    .catch(() => {
+      // eslint-disable-next-line no-console
+      console.log('Error seeding databse');
+    })
+    .then(() => connection.closeAsync());
 };
 
 generateNewDB(100);
