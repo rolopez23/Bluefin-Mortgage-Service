@@ -59,6 +59,7 @@ const seedDatabase = (entries) => {
   for (let i = 0; i < entries; i += 1) {
     const listing = new model.Listing(
       {
+        _id: i,
         price: randomPrice(),
         HOA: randomHOA(),
         zip: randomZip(),
@@ -69,6 +70,7 @@ const seedDatabase = (entries) => {
     const bank = randomSeller();
     const mortgageAd = new model.MortgageAd(
       {
+        _id: i,
         type: randomType(),
         seller: bank[0],
         NMLS: bank[1],
@@ -85,24 +87,22 @@ const seedDatabase = (entries) => {
 };
 // console.log("Listing:", listing);
 // console.log("MortgageAd:", MortgageAd);
+const generateNewDB = (entries) => {
+  connection.open(() => {
+    // clear database error will occur on no database so write in either case
+    Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()])
+      .then(() => seedDatabase(entries))
+      .catch(() => seedDatabase(entries))
+      .catch(() => {
+        // eslint-disable-next-line no-console
+        console.log('Error seeding databse');
+      });
+  });
+};
 
-connection.open(() => {
-  // clear database error will occur on no database so write in either case
-  Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()])
-    .then(() => {
-      // seedDatabase
-      seedDatabase();
-    })
-    .catch(() => {
-      seedDatabase(100);
-    })
-    .catch(() => {
-      // eslint-disable-next-line no-console
-      console.log('Error seeding databse');
-    });
-});
+generateNewDB(100);
 
 // export for testing
 module.exports = {
-  seedDatabase,
+  generateNewDB,
 };

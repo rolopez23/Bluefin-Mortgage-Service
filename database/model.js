@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const mortgageAdSchema = new Schema({
+  _id: Number,
   type: { type: String, enum: ['5/1 Arm', '30 Year Fixed', '15 Year Fixed'] },
   seller: String,
   NMLS: Number,
@@ -13,14 +14,15 @@ const mortgageAdSchema = new Schema({
   maximum: Number,
   clicks: { type: Number, default: 0 },
   region: String,
-});
+}, { _id: false });
 
 const listingSchema = new Schema({
+  _id: Number,
   price: Number,
   region: String,
   HOA: { type: Number, default: 0 },
   zip: String,
-});
+}, { _id: false });
 
 const Listing = mongoose.model('Listing', listingSchema);
 
@@ -29,6 +31,7 @@ const MortgageAd = mongoose.model('MortgageAd', mortgageAdSchema);
 const getListing = (listing) => Listing.findById(listing);
 
 
+// eslint-disable-next-line quote-props
 const getRelevantAdds = (region) => MortgageAd.find({ 'region': region });
 
 
