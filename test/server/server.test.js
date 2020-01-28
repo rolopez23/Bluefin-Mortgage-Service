@@ -13,8 +13,7 @@ const listingId = 1;
 // before all
 beforeAll(() => {
   // open connection
-  return connection.openAsync()
-    .then(() => Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()]))
+  return Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()])
     .then(() => {
       const testListing = new model.Listing(
         {
@@ -39,8 +38,7 @@ beforeAll(() => {
           region: 'SFBayArea',
         },
       );
-      return Promise.all([testMortgageAd.save(), testListing.save()])
-        .then(() => connection.closeAsync());
+      return Promise.all([testMortgageAd.save(), testListing.save()]);
     });
 });
 

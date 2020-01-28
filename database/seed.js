@@ -87,17 +87,19 @@ const seedDatabase = (entries) => {
 };
 // console.log("Listing:", listing);
 // console.log("MortgageAd:", MortgageAd);
-const generateNewDB = (entries) => {
-  return connection.openAsync()
-    .then(() => Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()]))
+// const generateNewDB = (entries) => connection.openAsync()
+//     .then(() => Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()])
+//     .then(() => seedDatabase(entries))
+//     .catch(() => seedDatabase(entries))
+//     .catch(() => {
+//         // eslint-disable-next-line no-console
+//         console.log('Error seeding databse');
+//     })
+const generateNewDB = (entries) => connection.open(() => {
+  return Promise.all([model.Listing.collection.drop(), model.MortgageAd.collection.drop()])
     .then(() => seedDatabase(entries))
-    .catch(() => seedDatabase(entries))
-    .catch(() => {
-      // eslint-disable-next-line no-console
-      console.log('Error seeding databse');
-    })
-    .then(() => connection.closeAsync());
-};
+    .catch(() => seedDatabase(entries));
+});
 
 generateNewDB(100);
 
