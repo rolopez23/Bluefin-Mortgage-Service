@@ -43,4 +43,4 @@ app.patch('addClick'), (req, res) => {
 
 module.exports = {
   app,
-}
+};

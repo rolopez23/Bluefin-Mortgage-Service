@@ -49,7 +49,7 @@ beforeAll(() => {
 
 // integration test - get route on a listing
 
-describe('It should properply respond to a get request for a listing', () => {
+describe('It should properly respond to a get request for a listing', () => {
   test('It should send back listing and relevant mortgage data', () => {
     const path = `/listing${listingId}`;
     return request(app.app).get(path)
