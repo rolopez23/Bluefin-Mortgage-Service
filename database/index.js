@@ -1,15 +1,25 @@
-const connection = require('./connection.js');
 const model = require('./model.js');
+const connection = require('./connection.js');
+
+connection.open(() => {
+  console.log('Connected to Mongo');
+});
 
 
-const getListing = (id) => model.getListing(id);
-// this is currently called when a connection is open
-const getMortgageAds = (region) => model.getRelevantAds(region);
+const getListing = (id) => model.Listing.findById(id);
+// eslint-disable-next-line quote-props
+const getMortgageAds = (region) => model.MortgageAd.find({ 'region': region });
 
-const getAd = (id) => model.getAd(id);
+// updates ad clicks
+
+const updateAd = (id, clicks) => model.MortgageAd.updateOne({ _id: id }, { "clicks": clicks });
+
+// only used for testing
+const getAd = (ad) => model.MortgageAd.findById(ad);
 
 module.exports = {
   getListing,
   getMortgageAds,
   getAd,
+  updateAd,
 };

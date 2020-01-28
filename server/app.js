@@ -12,6 +12,7 @@ const app = express();
 app.use(express.static(filePath));
 
 app.use(express.json());
+app.use(express.urlencoded());
 
 app.get('/listing:listingId', (req, res) => {
   // Get the id of the item, form req
@@ -32,14 +33,26 @@ app.get('/listing:listingId', (req, res) => {
     });
 });
 
-app.patch('addClick', (req, res) => {
+app.patch('/adClick', (req, res) => {
   // Get the id of the add
+  // console.log('recieved request', req.body);
   const adId = req.body.id;
-
+  let adRecord = {};
+  // console.log(adId);
   db.getAd(adId)
     .then((ad) => {
-      const newClick = ad.click + 1;
+      // console.log('ad', ad.clicks);
+      const newClick = ad.clicks + 1;
+      adRecord = ad;
+      adRecord.clicks = newClick;
+      return db.updateAd(adId, newClick);
     })
+    .then(() => {
+      // res.location('./secureContact.html');
+      res.send(JSON.stringify(adRecord));
+      res.redirect('./securecontanct.html');
+      // console.log(res);
+    });
   // Increment that add by one
 
   // Redirect to third party site.

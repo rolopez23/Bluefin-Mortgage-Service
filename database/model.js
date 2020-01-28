@@ -29,20 +29,7 @@ const Listing = mongoose.model('Listing', listingSchema);
 const MortgageAd = mongoose.model('MortgageAd', mortgageAdSchema);
 // Returns one listing based on an Id
 
-const getListing = (listing) => Listing.findById(listing);
-
-// only used for testing
-const getAd = (ad) => MortgageAd.findById(ad);
-
-
-// eslint-disable-next-line quote-props
-const getRelevantAds = (region) => MortgageAd.find({ 'region': region });
-
-
 module.exports = {
   Listing,
   MortgageAd,
-  getListing,
-  getRelevantAds,
-  getAd,
 };

@@ -7,6 +7,7 @@ const request = require('supertest');
 const app = require('../../server/app.js');
 const connection = require('../../database/connection.js');
 const model = require('../../database/model.js');
+const db = require('../../database');
 
 const listingId = 1;
 const adId = 1;
@@ -64,18 +65,15 @@ describe('It should properly respond to a get request for a listing', () => {
 
 describe('It should update a listing, when a click and then redirect to the checkout page', ()=> {
   test('The listing should change', () => {
-    const path = `/ads`;
+    const path = '/adClick';
     const id = adId;
     return request(app.app)
       .patch(path)
       .send(id)
       .set('Content-Type', 'application/json')
       .then((response) => {
-        expect(response.headers.location).toEqual('/secureContact');
-        return model.getAd(adID);
-      })
-      .then((ad) => {
-        expect(ad.clicks).toEqual(2);
+        // console.log(response);
+        expect(response.body).toEqual(1);
       });
   });
 });
