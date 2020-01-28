@@ -4,11 +4,14 @@ const path = require('path');
 
 // file dependencies
 const db = require('../database/');
-
+// declare file Path
 const filePath = path.join(__dirname, '..', 'public');
-
+// name App
 const app = express();
+
 app.use(express.static(filePath));
+
+app.use(express.json());
 
 app.get('/listing:listingId', (req, res) => {
   // Get the id of the item, form req
@@ -27,19 +30,20 @@ app.get('/listing:listingId', (req, res) => {
       // console.log(data, send.listing, send.ads);
       res.send(send);
     });
-
-  // Get relevant mortgages
-
-  // then send information to the client
 });
 
-app.patch('addClick'), (req, res) => {
+app.patch('addClick', (req, res) => {
   // Get the id of the add
+  const adId = req.body.id;
 
+  db.getAd(adId)
+    .then((ad) => {
+      const newClick = ad.click + 1;
+    })
   // Increment that add by one
 
   // Redirect to third party site.
-};
+});
 
 module.exports = {
   app,
