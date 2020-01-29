@@ -133,7 +133,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  // testEnvironment: "jest-environment-jsdom",
+  testEnvironment: "node",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -187,6 +187,20 @@ module.exports = {
   // Whether to use watchman for file crawling
   // watchman: true,
 
+  // projects: [
+  //   {
+  //     displayName: "server",
+  //     testEnv: "jest-environment-node",
+  //     moduleFileExtensions: ["js"],
+  //   },
+  //   {
+  //     "displayName": "lint",
+  //     "runner": "jest-runner-eslint",
+  //     "testMatch": ["<rootDir>/**/*.js"]
+  //   },
+
+  // ],
+
   moduleFileExtensions: ["js", "jsx"],
   moduleDirectories: ["node_modules"],
 
@@ -195,4 +209,6 @@ module.exports = {
   setupFilesAfterEnv: [
     "<rootDir>/jest.setup.js",
   ],
+
+  snapshotSerializers: ["enzyme-to-json/serializer"],
 };

@@ -1,14 +1,9 @@
-//  import statements
-const express = require('express');
-// const path = require('path');
 
-const filePath = '/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/public';
+const server = require('./app.js');
+
 const port = 4003;
-const app = express();
 
-app.use(express.static(filePath));
-
-app.listen(port, () => {
+server.app.listen(port, () => {
   // eslint-disable-next-line no-console
-  console.log(`Morgage sub-App is lisenting on port ${port}`);
+  console.log(`Mortgage SubApp is listening on port ${port}`);
 });

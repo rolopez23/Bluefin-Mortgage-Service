@@ -2,7 +2,7 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from '../client/src/mortgageComponents/App.jsx';
+import App from '../../client/src/mortgageComponents/App.jsx';
 
 
 describe('My Test Suite', () => {
