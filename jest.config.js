@@ -133,7 +133,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: "enzyme",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -207,6 +207,8 @@ module.exports = {
   testRegex: "((\\.|/*.)(test))\\.js?$",
 
   setupFilesAfterEnv: [
-    "<rootDir>/jest.setup.js",
+    "jest-enzyme",
   ],
+
+  snapshotSerializers: ["enzyme-to-json/serializer"],
 };

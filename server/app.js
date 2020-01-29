@@ -16,6 +16,7 @@ app.use(express.urlencoded());
 
 app.get('/listing:listingId', (req, res) => {
   // Get the id of the item, form req
+  console.log('request', req.params);
   const { listingId } = req.params;
   const send = {};
   // Send request for that listing
