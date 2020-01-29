@@ -7,5 +7,6 @@ describe('Ad', () => {
     // eslint-disable-next-line react/jsx-filename-extension
     const wrapper = mount(<Ad />);
     expect(wrapper).toContainMatchingElements(1, 'BankRateCard');
+    expect(wrapper).toContainMatchingElements(1, 'LenderInfo');
   });
 });
