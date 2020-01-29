@@ -9,4 +9,6 @@ const BankRateCard = Styled.div`
   box-sizing: border-box;
 `;
 
+BankRateCard.displayName = 'BankRateCard';
+
 export default BankRateCard;
