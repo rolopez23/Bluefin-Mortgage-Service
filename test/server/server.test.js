@@ -63,17 +63,18 @@ describe('It should properly respond to a get request for a listing', () => {
   });
 });
 
-describe('It should update a listing, when a click and then redirect to the checkout page', ()=> {
+describe('It should update a listing, when a click and then redirect to the checkout page', () => {
   test('The listing should change', () => {
     const path = '/adClick';
     const id = adId;
     return request(app.app)
       .patch(path)
-      .send(id)
+      .send({ id: `1` })
       .set('Content-Type', 'application/json')
+      .set('Accept', 'application/json')
       .then((response) => {
-        // console.log(response);
-        expect(response.body).toEqual(1);
+        // console.log(response.text);
+        expect(JSON.parse(response.text).clicks).toEqual(1);
       });
   });
 });

@@ -49,8 +49,9 @@ app.patch('/adClick', (req, res) => {
     })
     .then(() => {
       // res.location('./secureContact.html');
+      // console.log(adRecord);
       res.send(JSON.stringify(adRecord));
-      res.redirect('./securecontanct.html');
+      // res.redirect('./securecontanct.html');
       // console.log(res);
     });
   // Increment that add by one
