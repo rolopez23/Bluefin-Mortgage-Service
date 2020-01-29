@@ -2,6 +2,9 @@
 
 exports[`App App exists 1`] = `
 <div>
+  <h1>
+    App!
+  </h1>
   <div />
 </div>
 `;
