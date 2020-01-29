@@ -209,4 +209,6 @@ module.exports = {
   setupFilesAfterEnv: [
     "jest-enzyme",
   ],
+
+  snapshotSerializers: ["enzyme-to-json/serializer"],
 };
