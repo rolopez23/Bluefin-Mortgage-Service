@@ -13,3 +13,7 @@ const LenderInfo = Styled.div`
   grid-column-gap: 0;
   width: 100%;
 `;
+
+LenderInfo.displayName = 'LenderInfo';
+
+export default LenderInfo;
