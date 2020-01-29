@@ -4,7 +4,7 @@ import BankRateCard from './AdStyles/bankRateCard.jsx';
 
 const Ad = (props) => (
   <BankRateCard>
-    Ad!
+    Ad!!
   </BankRateCard>
 );
 
