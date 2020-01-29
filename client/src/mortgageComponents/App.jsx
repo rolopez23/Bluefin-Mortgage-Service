@@ -2,8 +2,10 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import axios from 'axios';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
+
 import AdList from './ads/AdList.jsx';
-import propTypes from 'prop-types';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,5 +41,10 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  listingId: PropTypes.number.isRequired,
+};
+
 
 export default App;

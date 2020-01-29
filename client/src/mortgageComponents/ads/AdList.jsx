@@ -1,9 +1,11 @@
 import React from 'react';
+
 import Ad from './Ad.jsx';
 
-const AdList = (props) => (
+
+const AdList = ({ads}) => (
   <div>
-    {props.ads.map((ad) => <Ad />)}
+    {ads.map((ad) => <Ad />)}
   </div>
 );
 
