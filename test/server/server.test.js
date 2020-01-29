@@ -7,8 +7,10 @@ const request = require('supertest');
 const app = require('../../server/app.js');
 const connection = require('../../database/connection.js');
 const model = require('../../database/model.js');
+const db = require('../../database');
 
 const listingId = 1;
+const adId = 1;
 
 // before all
 beforeAll(() => {
@@ -27,7 +29,7 @@ beforeAll(() => {
 
       const testMortgageAd = new model.MortgageAd(
         {
-          _id: 1,
+          _id: adId,
           type: '30 Year Fixed',
           seller: 'First Bank of Fraud',
           NMLS: 65111,
@@ -57,6 +59,22 @@ describe('It should properly respond to a get request for a listing', () => {
         // console.log('response', response.body);
         expect(response.body.listing.zip).toEqual('94110');
         expect(response.body.ads[0].seller).toEqual('First Bank of Fraud');
+      });
+  });
+});
+
+describe('It should update a listing, when a click and then redirect to the checkout page', () => {
+  test('The listing should change', () => {
+    const path = '/adClick';
+    const id = adId;
+    return request(app.app)
+      .patch(path)
+      .send({ id: `1` })
+      .set('Content-Type', 'application/json')
+      .set('Accept', 'application/json')
+      .then((response) => {
+        // console.log(response.text);
+        expect(JSON.parse(response.text).clicks).toEqual(1);
       });
   });
 });
