@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import Styled from 'styled-components';
 
@@ -13,11 +14,23 @@ import Seller from './AdStyles/Seller.jsx';
 import APRStyle from './AdStyles/APR.jsx';
 
 
-const Ad = ({ seller, APR, NMLS, interestRate}) => {
-  const [toggled, setToggled] = useState(false);
+const Ad = ({
+  id, seller, APR, NMLS, interestRate, selectedCard, click,
+}) => {
+
+
+  const toggled = id === selectedCard;
+  const clickFunction = (value) => {
+    if (!toggled) {
+      return click(value);
+    }
+    return click(null);
+  };
+
+  // console.log(id, selectedCard, toggled);
   return (
     <BankRateCard height={toggled ? '110px' : '80px'}>
-      <LenderInfo onClick={() => setToggled(!toggled)}>
+      <LenderInfo onClick={() => clickFunction(id)}>
         <div>
           <InterestRate>
             <Bold>{interestRate}</Bold>

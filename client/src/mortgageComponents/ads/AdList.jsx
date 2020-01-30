@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 import Ad from './Ad.jsx';
@@ -5,30 +6,39 @@ import Slider from './slider/Slider.jsx';
 import SliderBox from './slider/SliderBox.jsx';
 
 
+// @autobind
 class AdList extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      renderIndex: 0,
+      selectedCard: null,
     };
+    this.cardClick = this.cardClick.bind(this);
   }
 
-  createRenderArray() {
-    
+  cardClick(card) {
+    // console.log(card);
+    this.setState({
+      selectedCard: card,
+    });
   }
 
   render() {
+    const { selectedCard } = this.state;
+    const { ads } = this.props;
     return (
       <Slider>
-        {this.props.ads.map((ad) => (
+        {ads.map((ad) => (
           <SliderBox>
             <Ad
-              key={ad._id}
+              id={ad._id}
               seller={ad.seller}
               NMLS={ad.NMLS}
               APR={ad.APR}
               interestRate={ad.interestRate}
+              selectedCard={selectedCard}
+              click={this.cardClick}
             />
           </SliderBox>
         ))}
