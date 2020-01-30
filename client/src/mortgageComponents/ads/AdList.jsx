@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 import Ad from './Ad.jsx';
@@ -6,14 +7,24 @@ import SliderBox from './slider/SliderBox.jsx';
 import LoanInput from './input/LoanInput.jsx';
 
 
+// @autobind
 class AdList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       loanType: '30 Year Fixed',
     };
+    this.cardClick = this.cardClick.bind(this);
   }
 
+
+  cardClick(card) {
+    // console.log(card);
+    this.setState({
+      selectedCard: card,
+    });
+  }
+        
   handleSelect(select) {
     // console.log(select);
     this.setState({
@@ -21,9 +32,13 @@ class AdList extends React.Component {
     })
   }
 
+  sendInfo() {
+    console.log('sending information')
+  }
+
   render() {
     const { ads } = this.props;
-    const { loanType } = this.state;
+    const { loanType, selectedCard } = this.state;
     const renderLoans = ads.filter((ad) => (ad.type === loanType));
     return (
       <div>
@@ -33,11 +48,14 @@ class AdList extends React.Component {
           {renderLoans.map((ad) => (
             <SliderBox>
               <Ad
-                key={ad._id}
+                id={ad._id}
                 seller={ad.seller}
                 NMLS={ad.NMLS}
                 APR={ad.APR}
                 interestRate={ad.interestRate}
+                selectedCard={selectedCard}
+                click={this.cardClick}
+                send={this.sendInfo}
               />
             </SliderBox>
           ))}
