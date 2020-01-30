@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { mount } from 'enzyme';
+import Enzyme, { mount, shallow } from 'enzyme';
 import AdList from '../../../client/src/mortgageComponents/ads/AdList.jsx';
 
 
@@ -13,5 +13,9 @@ describe('Ad List', () => {
     expect(wrapper).toContainMatchingElements(5, 'Ad');
   });
 
-
+  test('Sliding flexbox exists', ()=> {
+    const wrapper = shallow(<AdList ads={[1, 2, 3]}/>);
+    expect(wrapper).toContainMatchingElements(1, 'Slider');
+    expect(wrapper).toContainMatchingElements(3, 'SliderBox');
+  });
 });
