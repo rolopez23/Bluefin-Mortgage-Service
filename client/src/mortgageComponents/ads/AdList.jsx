@@ -5,6 +5,7 @@ import Slider from './slider/Slider.jsx';
 import SliderBox from './slider/SliderBox.jsx';
 import LoanInput from './input/LoanInput.jsx';
 
+
 class AdList extends React.Component {
   constructor(props) {
     super(props);
@@ -45,5 +46,6 @@ class AdList extends React.Component {
     );
   }
 }
+
 
 export default AdList;

@@ -62,6 +62,7 @@ describe('Ad List', () => {
     
     wrapper.setState({loanType: '30 Year Fixed'});
     expect(wrapper).toContainMatchingElements(1, 'Ad');
+
   });
 
   test('Sliding flexbox exists', ()=> {
