@@ -36,7 +36,7 @@ app.get('/listing:listingId', (req, res) => {
 
 app.patch('/adClick', (req, res) => {
   // Get the id of the add
-  // console.log('recieved request', req.body);
+  console.log('recieved request', req.body);
   const adId = req.body.id;
   let adRecord = {};
   // console.log(adId);
