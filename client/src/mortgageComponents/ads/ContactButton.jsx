@@ -13,13 +13,15 @@ const ContactButton = Styled.button`
   font-size: 1.1rem;
 `;
 
+ContactButton.displayName = 'ContactButton';
+
 const Center = Styled.div`
   padding 5px;
 `;
 
-const StyledContactButton = () => (
+const StyledContactButton = ({ send }) => (
   <div>
-    <ContactButton onClick={() => console.log('click')}>
+    <ContactButton onClick={send}>
       <Center>Get pre-qualified</Center>
     </ContactButton>
   </div>

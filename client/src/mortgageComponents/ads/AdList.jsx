@@ -24,6 +24,10 @@ class AdList extends React.Component {
     });
   }
 
+  sendInfo() {
+    console.log('sending information')
+  }
+
   render() {
     const { selectedCard } = this.state;
     const { ads } = this.props;
@@ -39,6 +43,7 @@ class AdList extends React.Component {
               interestRate={ad.interestRate}
               selectedCard={selectedCard}
               click={this.cardClick}
+              send={this.sendInfo}
             />
           </SliderBox>
         ))}
