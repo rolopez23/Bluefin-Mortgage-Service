@@ -5,8 +5,44 @@ exports[`App App exists 1`] = `
   <h1>
     App
   </h1>
-  <div
-    className="sc-AykKI cueKlf"
-  />
+  <div>
+    <div>
+      Today's Rates for this home
+    </div>
+    <div
+      className="sc-fzXfLP bBygOf"
+    >
+      <div>
+        Loan Type
+      </div>
+      <div
+        className="sc-AykKK iwwpEG"
+      >
+        <select
+          className="sc-fzXfLO cLSJbz"
+          onChange={[Function]}
+        >
+          <option
+            value="30 Year Fixed"
+          >
+            30 Year Fixed
+          </option>
+          <option
+            value="15 Year Fixed"
+          >
+            15 Year Fixed
+          </option>
+          <option
+            value="5/1 Arm"
+          >
+            5/1 Arm
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      className="sc-AykKI cueKlf"
+    />
+  </div>
 </div>
 `;

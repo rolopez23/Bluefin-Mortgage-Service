@@ -12,7 +12,7 @@
     "test": "jest -u",
     "react-server": "nodemon server/index.js",
     "seed": "node database/seed.js",
-    "test-w": "jest -u --detectOpenHandles"
+    "test-w": "jest -u --detectOpenHandles --watch"
   },
   "dependencies": {
     "axios": "^0.19.2",
