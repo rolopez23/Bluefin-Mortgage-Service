@@ -14,11 +14,12 @@ class App extends React.Component {
       listingId: this.props.listingId,
       ads: [],
       listing: {},
+      today: `${new Date().getMonth() + 1}/${new Date().getDate()}`,
     };
   }
 
   componentDidMount() {
-    console.log(this.state.listingId);
+    console.log(this.state.listingId, this.state.today);
     const url = `/listing${this.state.listingId}`;
     axios.get(url)
       .then((response) => {
@@ -32,11 +33,14 @@ class App extends React.Component {
       });
   }
 
+
   render() {
     return (
       <div>
-        <h1>App!</h1>
-        <AdList ads={this.state.ads} />
+        <h1>App</h1>
+        <AdList
+          ads={this.state.ads}
+        />
       </div>
     );
   }
