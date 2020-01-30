@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styled from 'styled-components';
 
+// Other Components
+import StyledContactButton from './ContactButton.jsx';
 
 // Styles
 import BankRateCard from './AdStyles/BankRateCard.jsx';
@@ -11,30 +13,34 @@ import Seller from './AdStyles/Seller.jsx';
 import APRStyle from './AdStyles/APR.jsx';
 
 
-const Ad = ({ seller, APR, NMLS, interestRate}) => (
-  <BankRateCard>
-    <LenderInfo>
-      <div>
-        <InterestRate>
-          <Bold>{interestRate}</Bold>
-          %
-        </InterestRate>
-        Interest Rate
-      </div>
-      <div>
-        <APRStyle>
-          <Bold>{APR}</Bold>
-          %
-        </APRStyle>
-        {`APR as of ${`${new Date().getMonth() + 1}/${new Date().getDate()}`}`}
-      </div>
-      <div id='NMLS'>
-        <Seller><Bold>{seller}</Bold></Seller>
-        {`NMLS #  ${NMLS}`}
-      </div>
-    </LenderInfo>
-  </BankRateCard>
-);
+const Ad = ({ seller, APR, NMLS, interestRate}) => {
+  const [toggled, setToggled] = useState(false);
+  return (
+    <BankRateCard height={toggled ? '110px' : '80px'}>
+      <LenderInfo onClick={() => setToggled(!toggled)}>
+        <div>
+          <InterestRate>
+            <Bold>{interestRate}</Bold>
+            %
+          </InterestRate>
+          Interest Rate
+        </div>
+        <div>
+          <APRStyle>
+            <Bold>{APR}</Bold>
+            %
+          </APRStyle>
+          {`APR as of ${`${new Date().getMonth() + 1}/${new Date().getDate()}`}`}
+        </div>
+        <div id='NMLS'>
+          <Seller><Bold>{seller}</Bold></Seller>
+          {`NMLS #  ${NMLS}`}
+        </div>
+      </LenderInfo>
+      {toggled ? <StyledContactButton /> : null}
+    </BankRateCard>
+  );
+};
 
 
 export default Ad;
