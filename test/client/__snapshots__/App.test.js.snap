@@ -5,6 +5,8 @@ exports[`App App exists 1`] = `
   <h1>
     App
   </h1>
-  <div />
+  <div
+    className="sc-AykKI cueKlf"
+  />
 </div>
 `;
