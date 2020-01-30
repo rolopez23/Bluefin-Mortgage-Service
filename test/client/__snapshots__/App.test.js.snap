@@ -20,6 +20,7 @@ exports[`App App exists 1`] = `
       >
         <select
           className="sc-fzXfLO cLSJbz"
+          id="loanType"
           onChange={[Function]}
         >
           <option

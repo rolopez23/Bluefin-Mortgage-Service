@@ -20,6 +20,7 @@ const HiddenSelect = Styled.select`
   text-align: left;
 
 `
+HiddenSelect.displayName = HiddenSelect;
 
 export {
   CustomSelect,

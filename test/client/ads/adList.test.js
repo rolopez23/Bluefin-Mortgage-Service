@@ -59,7 +59,7 @@ describe('Ad List', () => {
     const wrapper = mount(<AdList ads={testAdList}/>);
     wrapper.setState({loanType: '5/1 ARM'})
     expect(wrapper).toContainMatchingElements(2, 'Ad');
-
+    
     wrapper.setState({loanType: '30 Year Fixed'});
     expect(wrapper).toContainMatchingElements(1, 'Ad');
   });
