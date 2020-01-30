@@ -25,5 +25,6 @@ module.exports = {
     'jest',
   ],
   rules: {
+    "react/prop-types": [<disabled>]
   },
 };
