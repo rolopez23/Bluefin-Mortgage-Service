@@ -9,6 +9,7 @@ const InputContainer = Styled.div`
   grid-template-columns: 49% 49%;
   grid-row-gap: 0;
   grid-column-gap: 2%;
+  overflow: hidden;
 `;
 
 InputContainer.displayName = InputContainer;
