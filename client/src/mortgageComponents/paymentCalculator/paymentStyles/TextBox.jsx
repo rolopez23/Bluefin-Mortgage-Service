@@ -10,4 +10,6 @@ const TextBox = Styled.input.attrs((props) => ({
   font-size: 1.4rem;
 `;
 
+TextBox.displayName = TextBox;
+
 export default TextBox;
