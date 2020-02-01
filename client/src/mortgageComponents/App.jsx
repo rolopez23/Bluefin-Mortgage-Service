@@ -6,6 +6,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 
 import AdList from './ads/AdList.jsx';
+import PaymentCalculator from './paymentCalculator/PaymentCalculator.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>App</h1>
+        <PaymentCalculator />
         <AdList
           ads={this.state.ads}
         />
