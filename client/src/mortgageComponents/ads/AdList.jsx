@@ -15,6 +15,7 @@ class AdList extends React.Component {
       loanType: '30 Year Fixed',
     };
     this.cardClick = this.cardClick.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
 
@@ -24,12 +25,12 @@ class AdList extends React.Component {
       selectedCard: card,
     });
   }
-        
+
   handleSelect(select) {
     // console.log(select);
     this.setState({
       loanType: select,
-    })
+    });
   }
 
   sendInfo() {
