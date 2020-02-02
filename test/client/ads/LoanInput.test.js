@@ -10,6 +10,5 @@ describe('Loan Input', () => {
 
     const func = wrapper.prop('select');
     expect(typeof func).toEqual('function');
-
-  })
-})
+  });
+});
