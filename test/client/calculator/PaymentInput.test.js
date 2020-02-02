@@ -45,4 +45,17 @@ describe('Tests on Payment Input Area', () => {
     expect(wrapper.find('#DPValue').first()).toHaveValue('$ 20,000');
     expect(wrapper.find('#priceValue').first()).toHaveValue('$ 100,000');
   });
+
+  test('Changes to props change state', () => {
+    const wrapper = mount(<PaymentInput />);
+    wrapper.setState({
+      price: 100000,
+      downPayment: 20000,
+      percentDownPayment: 20,
+      min: 50000,
+      max: 150000,
+    });
+    wrapper.setProps({ price: 500000 });
+    expect(wrapper).toHaveState({ price: 500000 });
+  });
 });

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-did-update-set-state */
+/* eslint-disable react/prop-types */
 /* eslint-disable quotes */
 import React, { Component } from 'react';
 // import { boundClass } from 'autobind-decorator';
@@ -10,12 +12,13 @@ import TextBox from './paymentStyles/TextBox.jsx';
 class PaymentInput extends React.Component {
   constructor(props) {
     super(props);
+    // console.log(price, downPayment);
     this.state = {
-      price: 200000,
-      downPayment: 60000,
-      percentDownPayment: 30,
-      min: 50000,
-      max: 150000,
+      price: null,
+      downPayment: null,
+      percentDownPayment: 20,
+      max: null,
+      min: null,
       editingPrice: false,
       editingDP: false,
       editingPercent: false,
@@ -28,14 +31,31 @@ class PaymentInput extends React.Component {
     this.toggleEditingDP = this.toggleEditingDP.bind(this);
     this.toggleEditingPercent = this.toggleEditingPercent.bind(this);
   }
-  // Limits updating to when nothing is being edited
-  // shouldComponentUpdate() {
-  //   const { editingPrice, editingDP, editingPercent } = this.state;
-  //   if (editingPrice || editingDP || editingPercent) {
-  //     return false
-  //   }
-  //   return true;
-  // }
+
+  componentDidUpdate() {
+    const { price, percentDownPayment } = this.state;
+    // Cannot use destructring since price is in props and state
+    // eslint-disable-next-line react/destructuring-assignment
+    const newPrice = this.props.price;
+    // console.log('update', oldProps, this.props);
+    if (newPrice !== price) {
+      // initialize all variables
+      if (price === null) {
+        const max = newPrice * 1.5;
+        const min = newPrice * 0.5;
+        this.setState({
+          max,
+          min,
+        });
+      }
+      const downPayment = newPrice * (percentDownPayment / 100);
+      this.setState({
+        price: newPrice,
+        downPayment,
+      });
+    }
+    // console.log(this.state);
+  }
 
   // Price changes cause the down payment to move
   handlePriceChange(event) {
@@ -46,12 +66,15 @@ class PaymentInput extends React.Component {
       [event.target.name]: newPrice,
       downPayment: newDownPayment,
     });
+    const { updatePrice } = this.props;
+    updatePrice(newPrice, newDownPayment);
     // console.log(this.state);
   }
 
   // Down Payment Changes re-redner the percent
   handleDPChange(event) {
     const { price } = this.state;
+    const { updatePrice } = this.state;
     const newDownPayment = event.target.value;
     const percent = (newDownPayment / price) * 100;
     // Validation for values
@@ -59,6 +82,7 @@ class PaymentInput extends React.Component {
       [event.target.name]: newDownPayment,
       percentDownPayment: percent,
     });
+    updatePrice(price, newDownPayment);
     // console.log(this.state);
   }
 
@@ -71,6 +95,7 @@ class PaymentInput extends React.Component {
       downPayment: newDownPayment,
     });
   }
+  // Function maintains link between state and the props
 
   dollarFormat(number) {
     const formatter = new Intl.NumberFormat(("en-US"), {
