@@ -5,7 +5,3 @@ const testListing = {
   zip: '94110',
   region: 'SFBayArea',
 },
-
-
-
-
