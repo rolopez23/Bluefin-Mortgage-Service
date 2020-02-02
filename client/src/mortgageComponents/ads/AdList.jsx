@@ -84,6 +84,7 @@ class AdList extends React.Component {
             {renderLoans.map((ad) => (
               <SliderBox>
                 <Ad
+                  key={ad._id}
                   id={ad._id}
                   seller={ad.seller}
                   NMLS={ad.NMLS}
