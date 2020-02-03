@@ -1,5 +1,6 @@
 /* eslint-disable import/extensions */
 import React from 'react';
+import Styled from 'styled-components';
 import axios from 'axios';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
@@ -8,6 +9,16 @@ import AdList from './ads/AdList.jsx';
 import PaymentCalculator from './paymentCalculator/PaymentCalculator.jsx';
 // Model imports
 import Mortgage from '../../mortgageModel/mortgage.js';
+
+const AppWrapper = Styled.div`
+  border-top: 1px solid #e2e2e2;
+  display: block;
+  position: relative;
+  margin-top: 3rem;
+  min-width: 600px;
+  width: 728px;
+  maxwidth: 728px;
+`;
 
 
 class App extends React.Component {
@@ -97,8 +108,7 @@ class App extends React.Component {
     } = this.state;
     // console.log(price, downPayment);
     return (
-      <div>
-        <h1>Mortgage App</h1>
+      <AppWrapper>
         <PaymentCalculator
           rate={rate}
           payments={payments}
@@ -113,7 +123,7 @@ class App extends React.Component {
           rateChange={this.updateRate}
           loanTypeChange={this.updateLoanType}
         />
-      </div>
+      </AppWrapper>
     );
   }
 }
