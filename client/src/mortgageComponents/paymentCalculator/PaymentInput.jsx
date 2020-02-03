@@ -8,6 +8,9 @@ import InputContainer from './paymentStyles/InputContainer.jsx';
 import Slider from './paymentStyles/Slider.jsx';
 import TextBox from './paymentStyles/TextBox.jsx';
 
+// import necessary helpers
+import dollarFormat from '../../../helpers/dollarFormat.js';
+
 // @boundClass
 class PaymentInput extends React.Component {
   constructor(props) {
@@ -15,7 +18,7 @@ class PaymentInput extends React.Component {
     // console.log(price, downPayment);
     this.state = {
       price: null,
-      downPayment: null,
+      downPayment: 20000,
       percentDownPayment: 20,
       max: null,
       min: null,
@@ -97,15 +100,6 @@ class PaymentInput extends React.Component {
   }
   // Function maintains link between state and the props
 
-  dollarFormat(number) {
-    const formatter = new Intl.NumberFormat(("en-US"), {
-      style: 'decimal',
-      currency: 'USD',
-      maximumFractionDigits: 0,
-    });
-    return formatter.format(Math.round(number));
-  }
-
   toggleEditingPrice() {
     const { editingPrice } = this.state;
     this.setState({ editingPrice: !editingPrice });
@@ -148,7 +142,7 @@ class PaymentInput extends React.Component {
               type="text"
               width="100%"
               onFocus={this.toggleEditingPrice}
-              value={`$ ${this.dollarFormat(price)}`}
+              value={dollarFormat(price)}
               readOnly
             />
           )}
@@ -171,7 +165,7 @@ class PaymentInput extends React.Component {
               type="text"
               width="65%"
               onFocus={this.toggleEditingDP}
-              value={`$ ${this.dollarFormat(downPayment)}`}
+              value={dollarFormat(downPayment)}
               readOnly
             />
           )}
