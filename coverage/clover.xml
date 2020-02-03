@@ -1,6 +1,341 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1580736636402" clover="3.2.0">
-  <project timestamp="1580736636402" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1580751292899" clover="3.2.0">
+  <project timestamp="1580751292899" name="All files">
+    <metrics statements="206" coveredstatements="165" conditionals="36" coveredconditionals="29" methods="52" coveredmethods="41" elements="294" coveredelements="235" complexity="0" loc="206" ncloc="206" packages="9" files="34" classes="34"/>
+    <package name="helpers">
+      <metrics statements="11" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <file name="dollarFormat.js" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/helpers/dollarFormat.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="48" type="stmt"/>
+        <line num="8" count="48" type="stmt"/>
+      </file>
+      <file name="lastNonZero.js" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/helpers/lastNonZero.js">
+        <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+      </file>
+      <file name="percentFormat.js" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/helpers/percentFormat.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="mortgageModel">
+      <metrics statements="16" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <file name="mortgage.js" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/mortgageModel/mortgage.js">
+        <metrics statements="16" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.mortgageComponents">
+      <metrics statements="34" coveredstatements="19" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="5"/>
+      <file name="App.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/App.jsx">
+        <metrics statements="34" coveredstatements="19" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="5"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="97" count="3" type="stmt"/>
+        <line num="99" count="3" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.mortgageComponents.ads">
+      <metrics statements="32" coveredstatements="28" conditionals="10" coveredconditionals="9" methods="12" coveredmethods="10"/>
+      <file name="Ad.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/Ad.jsx">
+        <metrics statements="10" coveredstatements="8" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+      <file name="AdList.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdList.jsx">
+        <metrics statements="17" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="6"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="57" count="14" type="stmt"/>
+        <line num="58" count="14" type="stmt"/>
+        <line num="59" count="44" type="stmt"/>
+        <line num="60" count="14" type="stmt"/>
+        <line num="89" count="14" type="stmt"/>
+      </file>
+      <file name="ContactButton.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/ContactButton.jsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.mortgageComponents.ads.AdStyles">
+      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="APR.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdStyles/APR.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+      </file>
+      <file name="AdListContainer.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdStyles/AdListContainer.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+      <file name="BankRateCard.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdStyles/BankRateCard.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+      </file>
+      <file name="Bold.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdStyles/Bold.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+      </file>
+      <file name="InterestRate.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdStyles/InterestRate.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+      </file>
+      <file name="LenderInfo.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdStyles/LenderInfo.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+      </file>
+      <file name="Seller.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdStyles/Seller.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+      </file>
+      <file name="TitleBar.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/AdStyles/TitleBar.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.mortgageComponents.ads.input">
+      <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="CustomSelect.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/input/CustomSelect.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+      </file>
+      <file name="InputGrid.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/input/InputGrid.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+      <file name="LoanInput.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/input/LoanInput.jsx">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.mortgageComponents.ads.slider">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Slider.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/slider/Slider.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+      <file name="SliderBox.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/ads/slider/SliderBox.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.mortgageComponents.paymentCalculator">
+      <metrics statements="69" coveredstatements="49" conditionals="15" coveredconditionals="13" methods="16" coveredmethods="11"/>
+      <file name="CustomizeBar.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/CustomizeBar.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+      </file>
+      <file name="LegendItem.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/LegendItem.jsx">
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+      </file>
+      <file name="PaymentCalculator.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/PaymentCalculator.jsx">
+        <metrics statements="18" coveredstatements="15" conditionals="5" coveredconditionals="3" methods="4" coveredmethods="4"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="40" count="5" type="stmt"/>
+        <line num="41" count="5" type="cond" truecount="2" falsecount="1"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="4" type="stmt"/>
+        <line num="50" count="4" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="63" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="72" count="5" type="stmt"/>
+      </file>
+      <file name="PaymentInput.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/PaymentInput.jsx">
+        <metrics statements="41" coveredstatements="25" conditionals="10" coveredconditionals="10" methods="9" coveredmethods="6"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
+        <line num="35" count="6" type="stmt"/>
+        <line num="39" count="18" type="stmt"/>
+        <line num="42" count="18" type="stmt"/>
+        <line num="44" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="46" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="48" count="4" type="stmt"/>
+        <line num="49" count="4" type="stmt"/>
+        <line num="54" count="7" type="stmt"/>
+        <line num="55" count="7" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="104" count="2" type="stmt"/>
+        <line num="105" count="2" type="stmt"/>
+        <line num="109" count="2" type="stmt"/>
+        <line num="110" count="2" type="stmt"/>
+        <line num="114" count="2" type="stmt"/>
+        <line num="115" count="2" type="stmt"/>
+        <line num="122" count="24" type="stmt"/>
+        <line num="123" count="24" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.mortgageComponents.paymentCalculator.paymentStyles">
+      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <file name="InputContainer.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/InputContainer.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+      </file>
+      <file name="LegendFlex.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/LegendFlex.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="PaymentBar.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/PaymentBar.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="PaymentBarElement.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/PaymentBarElement.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+      </file>
+      <file name="PaymentContainer.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/PaymentContainer.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+      <file name="PaymentHeader.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/PaymentHeader.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="PaymentHeading.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/PaymentHeading.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="Slider.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/Slider.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+      <file name="TextBox.jsx" path="/Users/robertlopez/Desktop/Bluefin-Mortgage-Service/client/src/mortgageComponents/paymentCalculator/paymentStyles/TextBox.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="72" type="stmt"/>
+        <line num="8" count="72" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

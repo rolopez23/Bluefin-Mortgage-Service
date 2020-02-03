@@ -15,6 +15,7 @@ const testAd = {
 };
 
 const myMock = jest.fn();
+const myMock2 = jest.fn();
 
 describe('Ad', () => {
   test('Renders Card Styling', () => {
@@ -40,7 +41,7 @@ describe('Ad', () => {
     expect(wrapper.find('#NMLS')).toIncludeText(testAd.NMLS);
   });
   test('Calls function on click', () => {
-    const wrapper = shallow(<Ad click={myMock} />);
+    const wrapper = shallow(<Ad click={myMock} rateChange={myMock2} />);
     expect(myMock.mock.calls.length).toBe(0);
     wrapper.find('LenderInfo').simulate('click');
     expect(myMock.mock.calls.length).toBe(1);
