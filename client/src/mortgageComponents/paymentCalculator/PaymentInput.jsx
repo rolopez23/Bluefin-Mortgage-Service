@@ -77,7 +77,7 @@ class PaymentInput extends React.Component {
   // Down Payment Changes re-redner the percent
   handleDPChange(event) {
     const { price } = this.state;
-    const { updatePrice } = this.state;
+    const { updatePrice } = this.props;
     const newDownPayment = event.target.value;
     const percent = (newDownPayment / price) * 100;
     // Validation for values
@@ -91,12 +91,14 @@ class PaymentInput extends React.Component {
 
   handlePercentChange(event) {
     const { price } = this.state;
+    const { updatePrice } = this.props;
     const percent = event.target.value / 100;
     const newDownPayment = Math.round(percent * price);
     this.setState({
       percentDownPayment: event.target.value,
       downPayment: newDownPayment,
     });
+    updatePrice(price, newDownPayment);
   }
   // Function maintains link between state and the props
 
