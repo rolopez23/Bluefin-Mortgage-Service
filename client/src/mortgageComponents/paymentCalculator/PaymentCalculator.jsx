@@ -17,7 +17,6 @@ import PaymentHeading from './paymentStyles/PaymentHeading.jsx';
 
 // Helper Functions
 import dollarFormat from '../../../helpers/dollarFormat.js';
-import percentFormat from '../../../helpers/percentFormat.js';
 import lastNonZero from '../../../helpers/lastNonZero.js';
 
 const PaymentCalculator = ({
@@ -35,8 +34,7 @@ const PaymentCalculator = ({
       <PaymentHeading>
         {`${dollarFormat(payment)} per month`}
       </PaymentHeading>
-      <CustomizeBar />
-      <div>{loanType} {percentFormat(rate)}</div>
+      <CustomizeBar loanType={loanType} rate={rate} />
       <PaymentBar>
         {payments.map((amount, index) => {
           let borderRadius = '0px';

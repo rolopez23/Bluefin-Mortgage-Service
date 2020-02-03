@@ -5,6 +5,7 @@ const PaymentBar = Styled.div`
   width: 100%;
   display: inline-block;
   border-radius: 25px;
+  margin-top: 24px;
 `;
 
 export default PaymentBar;
