@@ -42,8 +42,8 @@ describe('Tests on Payment Input Area', () => {
       max: 150000,
     });
     expect(wrapper.find('#percentValue').first()).toHaveValue('20 %');
-    expect(wrapper.find('#DPValue').first()).toHaveValue('$ 20,000');
-    expect(wrapper.find('#priceValue').first()).toHaveValue('$ 100,000');
+    expect(wrapper.find('#DPValue').first()).toHaveValue('$20,000');
+    expect(wrapper.find('#priceValue').first()).toHaveValue('$100,000');
   });
 
   test('Changes to props change state', () => {

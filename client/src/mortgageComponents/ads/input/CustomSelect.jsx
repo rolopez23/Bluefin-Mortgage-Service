@@ -5,6 +5,7 @@ const CustomSelect = Styled.div`
   height: 40px;
   width 300px;
   border: 2px solid black;
+  margin-below: 25px;
 `;
 
 const HiddenSelect = Styled.select`
@@ -18,11 +19,11 @@ const HiddenSelect = Styled.select`
   border:none;
   margin-left: 0px;
   text-align: left;
-
+  margin-below: 25px;
 `;
 HiddenSelect.displayName = HiddenSelect;
 
 export {
   CustomSelect,
   HiddenSelect,
-}
+};

@@ -15,15 +15,15 @@ import APRStyle from './AdStyles/APR.jsx';
 
 
 const Ad = ({
-  id, seller, APR, NMLS, interestRate, selectedCard, click, send,
+  id, seller, APR, NMLS, interestRate, selectedCard, click, send, rateChange,
 }) => {
-
-
   const toggled = id === selectedCard;
   const clickFunction = (value) => {
     if (!toggled) {
+      rateChange(APR);
       return click(value);
     }
+    rateChange(3.5);
     return click(null);
   };
 
@@ -50,7 +50,7 @@ const Ad = ({
           {`NMLS #  ${NMLS}`}
         </div>
       </LenderInfo>
-      {toggled ? <StyledContactButton send={send}/> : null}
+      {toggled ? <StyledContactButton send={send} /> : null}
     </BankRateCard>
   );
 };

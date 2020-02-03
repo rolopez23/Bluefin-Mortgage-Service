@@ -52,7 +52,7 @@ const testAd4 = {
 
 
 let testAdList = [testAd1, testAd2, testAd3, testAd4];
-
+const myMock = jest.fn();
 
 describe('Ad List', () => {
   test('Renders the correct length based on conditional rendering', () => {
@@ -73,7 +73,7 @@ describe('Ad List', () => {
   });
 
   test('Handle Select function works', () => {
-    const wrapper = shallow(<AdList ads={testAdList} />);
+    const wrapper = shallow(<AdList loanTypeChange={myMock} ads={testAdList} />);
     wrapper.setState({ loanType: '5/1 ARM' });
     expect(wrapper).toContainMatchingElements(2, 'SliderBox');
     const instance = wrapper.instance();

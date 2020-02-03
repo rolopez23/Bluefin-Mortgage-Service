@@ -8,6 +8,7 @@ const TitleBar = Styled.div`
   font-size: 1.25rem;
   align-items: flex-start;
   vertical-align: top;
+  margin-bottom: 25px;
 `;
 
 TitleBar.displayName = 'TitleBar';

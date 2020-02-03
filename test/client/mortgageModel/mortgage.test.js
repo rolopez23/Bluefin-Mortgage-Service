@@ -1,7 +1,6 @@
 import Mortgage from '../../../client/mortgageModel/mortgage.js';
 
 describe('Mortgage tests ', () => {
-
   test('it calculates a payment correctly', () => {
     const mortgage = new Mortgage(15, 4, 300000, 0);
     expect(mortgage.payment).toEqual(2219);
