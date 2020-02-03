@@ -12,14 +12,18 @@ const CustomizeButton = Styled.button`
   font-size: 1rem;
 `;
 
+const CustomizeText = Styled.div`
+  font-size: 1rem;
+`;
+
 
 const CustomizeBar = ({loanType, rate}) => (
-  <div>
+  <CustomizeText>
     <span>{`${loanType}, ${percentFormat(rate)}`}</span>
     <CustomizeButton>
       <span>Customize Calculations</span>
     </CustomizeButton>
-  </div>
+  </CustomizeText>
 );
 
 export default CustomizeBar;

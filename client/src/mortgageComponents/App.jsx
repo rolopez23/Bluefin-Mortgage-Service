@@ -9,6 +9,7 @@ import PaymentCalculator from './paymentCalculator/PaymentCalculator.jsx';
 // Model imports
 import Mortgage from '../../mortgageModel/mortgage.js';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +23,7 @@ class App extends React.Component {
       listing: {},
       payments: [],
       loanType: '30 Year Fixed',
+      years: 30,
     };
     this.updatePrice = this.updatePrice.bind(this);
     this.updateMortgage = this.updateMortgage.bind(this);
@@ -62,17 +64,26 @@ class App extends React.Component {
   }
 
   updateLoanType(loanType) {
-    this.setState({ loanType });
+    let newYears = 30;
+    if (loanType === '15 Year Fixed') {
+      newYears = 15;
+    }
+    this.setState({ loanType, years: newYears });
   }
 
   updatePrice(price, downPayment) {
+    const { rate, years } = this.state;
     this.setState({
       price,
       downPayment,
     });
+    this.updateMortgage(years, rate, price, downPayment);
     // console.log('updated price', price, downPayment);
   }
 
+  updateRate(rate) {
+    this.setState({ rate });
+  }
 
   render() {
     const {
@@ -81,7 +92,7 @@ class App extends React.Component {
     // console.log(price, downPayment);
     return (
       <div>
-        <h1>App</h1>
+        <h1>Mortgage App</h1>
         <PaymentCalculator
           rate={rate}
           payments={payments}

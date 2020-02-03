@@ -6,6 +6,7 @@ const Slider = Styled.div`
   display: flex;
   flex-direction: row;
   padding-right: 10rem;
+  
 `;
 
 Slider.displayName = 'Slider';
