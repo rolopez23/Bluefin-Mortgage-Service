@@ -27,6 +27,8 @@ class App extends React.Component {
     };
     this.updatePrice = this.updatePrice.bind(this);
     this.updateMortgage = this.updateMortgage.bind(this);
+    this.updateRate = this.updateRate.bind(this);
+    this.updateLoanType = this.updateLoanType.bind(this);
   }
 
   componentDidMount() {
@@ -65,10 +67,12 @@ class App extends React.Component {
 
   updateLoanType(loanType) {
     let newYears = 30;
+    const { rate, price, downPayment } = this.state;
     if (loanType === '15 Year Fixed') {
       newYears = 15;
     }
     this.setState({ loanType, years: newYears });
+    this.updateMortgage(newYears, rate, price, downPayment);
   }
 
   updatePrice(price, downPayment) {
@@ -82,7 +86,9 @@ class App extends React.Component {
   }
 
   updateRate(rate) {
+    const { years, price, downPayment } = this.state;
     this.setState({ rate });
+    this.updateMortgage(years, rate, price, downPayment);
   }
 
   render() {
@@ -104,6 +110,8 @@ class App extends React.Component {
         <AdList
           ads={ads}
           listing={listing}
+          rateChange={this.updateRate}
+          loanTypeChange={this.updateLoanType}
         />
       </div>
     );

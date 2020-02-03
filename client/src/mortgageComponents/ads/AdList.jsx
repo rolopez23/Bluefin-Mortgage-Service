@@ -35,9 +35,11 @@ class AdList extends React.Component {
 
   handleSelect(select) {
     // console.log(select);
+    const { loanTypeChange } = this.props;
     this.setState({
       loanType: select,
     });
+    loanTypeChange(select);
   }
 
   toggleLoanType() {
@@ -52,7 +54,7 @@ class AdList extends React.Component {
   }
 
   render() {
-    const { ads } = this.props;
+    const { ads, rateChange } = this.props;
     const { loanType, selectedCard, showLoan } = this.state;
     const renderLoans = ads.filter((ad) => (ad.type === loanType));
     return (
@@ -76,7 +78,9 @@ class AdList extends React.Component {
         </TitleBar>
         { showLoan ? (
           <div>
-            <LoanInput select={this.handleSelect} />
+            <LoanInput
+              select={this.handleSelect}
+            />
           </div>
         ) : null}
         <div>
@@ -93,6 +97,7 @@ class AdList extends React.Component {
                   selectedCard={selectedCard}
                   click={this.cardClick}
                   send={this.sendInfo}
+                  rateChange={rateChange}
                 />
               </SliderBox>
             ))}

@@ -13,6 +13,6 @@ const LoanInput = ( { select }) => (
     </HiddenSelect>
   </CustomSelect>
 </InputGrid>
-)
+);
 
 export default LoanInput;
