@@ -44,7 +44,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const { listingId } = this.state;
-    const url = `/listing${listingId}`;
+    const url = `/mortgage${listingId}`;
     axios.get(url)
       .then((response) => {
         // console.log(response.data);

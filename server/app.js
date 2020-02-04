@@ -14,7 +14,7 @@ app.use(express.static(filePath));
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.get('/listing:listingId', (req, res) => {
+app.get('/mortgage:listingId', (req, res) => {
   // Get the id of the item, form req
   console.log('request', req.params);
   const { listingId } = req.params;
