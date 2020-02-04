@@ -1,8 +1,8 @@
 {
   "name": "BluefinMortgageCalculator",
-  "version": "",
-  "description": "",
-  "author": "",
+  "version": "0.1.0",
+  "description": "Calculates Mortgage for items",
+  "author": "Rob Lopez",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
