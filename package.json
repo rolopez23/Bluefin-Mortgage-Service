@@ -8,11 +8,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
+    "react-dev": "webpack -d --watch --config webpack.dev.js",
+    "production": "webpack -d --config webpack.prod.js",
     "test": "jest -u",
     "react-server": "nodemon server/index.js",
     "seed": "node database/seed.js",
-    "test-w": "jest -u --detectOpenHandles --watch"
+    "test-w": "jest -u --detectOpenHandles --watch",
+    "start": "pm2 start index.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -30,6 +32,7 @@
     "@babel/preset-react": "^7.8.3",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "babel-minify": "^0.5.1",
     "babel-polyfill": "^6.26.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
@@ -48,7 +51,9 @@
     "prop-types": "^15.7.2",
     "react-test-renderer": "^16.12.0",
     "supertest": "^4.0.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2"
   }
 }

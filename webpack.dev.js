@@ -10,7 +10,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],
-            plugins: [["@babel/plugin-proposal-decorators", { "legacy": true }],]
+            plugins: [],
           }
         }
       }
