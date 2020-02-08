@@ -1,11 +1,8 @@
 /* eslint disable */
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 
 module.exports = {
   entry: __dirname + '/client/src/index.jsx',
-  optimization: {
-    minimizer: [new UglifyJsPlugin()],
-  },
   mode: 'production',
   module: {
     rules: [

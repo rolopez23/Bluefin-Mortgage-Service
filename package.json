@@ -9,7 +9,7 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch --config webpack.dev.js",
-    "production": "webpack -d --config webpack.prod.js",
+    "production": "webpack --config webpack.prod.js",
     "test": "jest -u",
     "react-server": "nodemon server/index.js",
     "seed": "node database/seed.js",
