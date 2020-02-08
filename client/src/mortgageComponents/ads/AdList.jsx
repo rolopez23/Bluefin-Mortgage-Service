@@ -5,6 +5,7 @@ import React from 'react';
 import Ad from './Ad.jsx';
 import Slider from './slider/Slider.jsx';
 import SliderBox from './slider/SliderBox.jsx';
+import InnerSliderBox from './slider/InnerSliderBox.jsx';
 import LoanInput from './input/LoanInput.jsx';
 
 // styled components
@@ -84,24 +85,26 @@ class AdList extends React.Component {
           </div>
         ) : null}
         <div>
-          <Slider>
-            {renderLoans.map((ad) => (
-              <SliderBox>
-                <Ad
-                  key={ad._id}
-                  id={ad._id}
-                  seller={ad.seller}
-                  NMLS={ad.NMLS}
-                  APR={ad.APR}
-                  interestRate={ad.interestRate}
-                  selectedCard={selectedCard}
-                  click={this.cardClick}
-                  send={this.sendInfo}
-                  rateChange={rateChange}
-                />
-              </SliderBox>
-            ))}
-          </Slider>
+          <InnerSliderBox>
+            <Slider>
+              {renderLoans.map((ad) => (
+                <SliderBox>
+                  <Ad
+                    key={ad._id}
+                    id={ad._id}
+                    seller={ad.seller}
+                    NMLS={ad.NMLS}
+                    APR={ad.APR}
+                    interestRate={ad.interestRate}
+                    selectedCard={selectedCard}
+                    click={this.cardClick}
+                    send={this.sendInfo}
+                    rateChange={rateChange}
+                  />
+                </SliderBox>
+              ))}
+            </Slider>
+          </InnerSliderBox>
         </div>
       </AdListContainer>
     );

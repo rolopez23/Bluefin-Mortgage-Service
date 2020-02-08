@@ -18,6 +18,7 @@ const AppWrapper = Styled.div`
   min-width: 600px;
   width: 728px;
   maxwidth: 728px;
+  font-family: 'Libre-Franklin', sans-serif;
 `;
 
 

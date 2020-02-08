@@ -1,12 +1,15 @@
 import Styled from 'styled-components';
 
 const Slider = Styled.div`
-  overflow: scroll;
-  width: 100 %;
   display: flex;
-  flex-direction: row;
+  overflow-x: scroll;
+  scroll-snap-type: x;
   padding-right: 10rem;
   margin-top: 10px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
 
 `;
 

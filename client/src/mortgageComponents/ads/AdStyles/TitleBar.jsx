@@ -9,6 +9,9 @@ const TitleBar = Styled.div`
   align-items: flex-start;
   vertical-align: top;
   margin-bottom: 25px;
+  min-width: 600px;
+  width: 728px;
+  maxwidth: 728px;
 `;
 
 TitleBar.displayName = 'TitleBar';
