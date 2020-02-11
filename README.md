@@ -1,13 +1,23 @@
 # Project Name
 
-> Project description
+> This project is a Mortgage Calculator and card carousel for Mortgage quotes.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+BlueProxy-ROL:
+https://github.com/rolopez23/BlueProxyROL
+Current IP: http://54.241.98.251:4000/
+LeadEngineer: https://github.com/rolopez23
+
+Similiar Homes:
+https://github.com/Big-Tunas/Bluefin-Service-SimilarHomes
+Current IP: http://18.144.115.157:4004/
+Lead Engineer: https://github.com/kevinyhong
+
+Calendar Widget:
+https://github.com/Big-Tunas/Bluefin-Service-ScheduleTour
+Current IP: http://52.52.152.21:3002/
+Lead Engineer: https://github.com/MarkVincentGo
 
 ## Table of Contents
 
@@ -17,13 +27,13 @@
 
 ## Usage
 
-> Some usage instructions
+> Subcomponent rendered in BlueProxyROL, only published for testing and debugging purposes.
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
+- Node 8.15.1
 - etc
 
 ## Development
